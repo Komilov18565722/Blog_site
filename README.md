@@ -1,6 +1,6 @@
 # Blog_site
 
-Siteda nmalar qilsa bo'ladi?
+Siteda nmalar qilsa bo'ladi? \n
     Ro'yxatdan otish url = `\signup`
     Sitega Login parol orqal kirish url = `\login`
     Yangi Post Yaratish url = `\article\new`
