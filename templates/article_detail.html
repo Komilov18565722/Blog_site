@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="card" style="margin-left: 20%; width: 60% ">
+        {% if article.photo %}
+            <img src="{{ article.photo.url }}" class="card-img-top" alt="{{article.summery}">
+            <hr>    
+        {% endif %}
+
+        <div class="card-body">
+            <h3 class="card-title">{{ article.title }}</h3>
+            <h6 class="card-text">{{ article.summery}}</h6>
+            <hr>
+            <p class="card-text" style="font-style: italic; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">{{ article.text|safe }}</p>
+
+        </div>
+        
+        <ul class="list-group list-group-flush">
+            {% if user.is_authenticated %}
+                {% if user.username == article.auther.username %}
+                    <li class="list-group-item" > <a style="margin-left: 40%;" href="{% url 'article_delete' article.pk %}">O`chirish</a> | <a href="{% url 'article_update' article.pk %}">Tahrirlash</a></li>                    
+                {% endif %}
+            {% endif %}
+            <li class="list-group-item"> <h6>Auther: <samp style="float: right;"> {{article.auther}} </samp> </h6>
+            </li>
+            <li class="list-group-item"><h6>Date: {{article.date}} </h6></li>
+        </ul>
+    </div>
+{% endblock content %}

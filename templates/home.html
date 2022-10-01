@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Bosh sahifa {% endblock title %}
+{% block content %}
+    <style>
+        body{
+            background-color: darkslategray;
+        }
+        
+    </style>
+    <a style="text-decoration: none; color : rgb(89, 89, 226)" href="{% url 'posts' %}">
+        <div>
+            <h1 style="color: aquamarine; margin-top: 15%; text-align: center;">Mr_Komilov</h1>
+            <h3 style="text-align: center;">ning shaxsiy Blog saytiga xush kelipsiz</h3>
+            <h5 style="text-align: center;">Maqolalarni o`qish uchun ...</h5>
+        </div>
+    </a>
+{% endblock content %}
